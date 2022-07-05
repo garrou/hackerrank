@@ -21,6 +21,3 @@ def pickingNumbers(a: list[int]) -> int:
         res = maxi if maxi > res else res
     
     return res
-
-# print(pickingNumbers([4,6,5,3,3,1]))
-print(pickingNumbers([1,2,2,3,1,2]))
