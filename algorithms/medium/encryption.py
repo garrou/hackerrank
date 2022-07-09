@@ -8,18 +8,18 @@ def encryption(s: str) -> str:
     sq = math.sqrt(l)
     rows = math.floor(sq)
     cols = math.ceil(sq)
-    grid = []
-    ind = 0
     total = rows * cols
     
     if total < l:
         rows += l - total
 
-    for i in range(rows):
-        grid.append([])
+    ind = 0
+    grid = [[""] * cols for _ in range(rows)] 
 
+    for i in range(rows):
         for j in range(cols):
-            grid[i].append(s[ind] if ind < l else "")
+            if ind < l:
+                grid[i][j] = s[ind]
             ind += 1
         
     res = ""
