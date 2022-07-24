@@ -2,19 +2,18 @@
 
 def kaprekarNumbers(p: int, q: int) -> None:
     res = []
+
+    if p < 10:
+        if p <= 1:
+            res.append(1)
+        res.append(9)
+        p = 45
     
     for i in range(p, q+1):
         s = str(i**2)
         l = len(s)
-        left = s[:l//2]
-        right = s[l//2:]
         
-        if left == '':
-            left = 0
-        if right == '':
-            right = 0
-        
-        if int(left) + int(right) == i:
+        if int(s[:l//2]) + int(s[l//2:]) == i:
             res.append(i)
             
     if len(res) == 0:
