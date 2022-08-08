@@ -15,9 +15,6 @@ def count_occurs(arr: list[int]) -> dict[int, int]:
     d = {}
     
     for elt in arr:
-        if d.get(elt) == None:
-            d[elt] = 1
-        else:
-            d[elt] += 1
+        d[elt] = d.get(elt, 0) + 1
             
     return d
